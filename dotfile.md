@@ -36,6 +36,7 @@ A list of the essential software I use, along with their installation commands o
 |**FDM**|Official Website (`.deb`)|Free Download Manager|
 |**fzf**|`git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install`|Command-line fuzzy finder|
 |**Gnome SW Plugin**|`sudo apt install gnome-software-plugin-snap`|Snap plugin for GNOME Software|
+|**gromit-mpx| `sudo apt install gromit-mpx`|draw on screen|
 
 ---
 ## GNOME Extensions
