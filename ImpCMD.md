@@ -219,3 +219,14 @@ for file in "Session 06 Bash Scripting Essentials.mkv" \
   awk '{printf "%02d:%02d:%02d\n",$1/3600,($1%3600)/60,$1%60}'
 done
 ```
+
+
+### how to create swap file
+
+```bash
+sudo swapoff -a
+sudo fallocate -l 16G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+```
