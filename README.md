@@ -56,6 +56,11 @@ source ~/.zshrc
 chsh -s $(which zsh)
 ```
 
+### 8. you should install this to make zsh configuration file work well
+```bash
+sudo apt install zsh-syntax-highlighting zsh-autosuggestions -y
+```
+
 ---
 
 ## 📝 Neovim Setup
