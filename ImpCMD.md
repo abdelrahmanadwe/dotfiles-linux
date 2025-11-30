@@ -146,13 +146,9 @@ for file in "Session 06 Bash Scripting Essentials.mkv" \
 done
 ```
 
-
-### how to create swap file
-
+### force specific program to run in dark mode
 ```bash
-sudo swapoff -a
-sudo fallocate -l 16G /swapfile
-sudo chmod 600 /swapfile
-sudo mkswap /swapfile
-sudo swapon /swapfile
+GTK_THEME=Adwaita:dark program
 ```
+
+

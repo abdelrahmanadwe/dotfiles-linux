@@ -6,37 +6,37 @@ This document is my personal guide for all the settings, software, and customiza
 
 A list of the essential software I use, along with their installation commands or sources.
 
-|Application|Install Command / Source|Notes|
-|---|---|---|
-|**WhatsApp**|`flatpak install flathub io.github.mimbrero.WhatsAppDesktop`|Unofficial Flatpak version|
-|**Telegram**|`flatpak install flathub org.telegram.desktop`|Official Version|
-|**Discord**|Official Website (`.deb`)||
-|**STM32CubeIDE**|Official Website|IDE for STM32 development|
-|**STM32CubeMX**|Official Website|Code generation tool|
-|**VS Code**|`sudo apt install code`|Code Editor|
-|**Windscribe**|Official Website (`.deb`)|VPN Service (Corrected from Windsurf)|
-|**Vysor**|Official Website|Mirror phone screen to computer|
-|**SMPlayer**|`sudo apt install smplayer`|Media Player|
-|**Neovim**|`sudo apt install neovim`|Advanced Text Editor|
-|**Bottles**|`flatpak install flathub com.usebottles.bottles`|Run Windows software|
-|**AnyDesk**|Official Website (`.deb`)|Remote Desktop Access|
-|**OnlyOffice**|`sudo apt install onlyoffice-desktopeditors`|Office Suite|
-|**GIMP**|`flatpak install flathub org.gimp.GIMP`|Image Editor|
-|**OBS Studio**|`sudo apt install obs-studio`|Recording & Streaming|
-|**Foxit Reader**|Official Website (`.deb`)|PDF Reader|
-|**Serial Port Terminal**|`sudo apt install cutecom`|GUI for serial devices|
-|**PuTTY**|`sudo apt install putty`|SSH and Telnet client|
-|**Tilix**|`sudo apt install tilix`|Tiling Terminal Emulator|
-|**zsh**|`sudo apt install zsh`|Alternative Shell|
-|**clangd**|`sudo apt install clangd`|Language server for C/C++|
-|**Git**|`sudo apt install git`|Version Control System|
-|**Firefox**|`sudo apt install firefox`|Web Browser|
-|**gcc**|`sudo apt install gcc`|C Compiler|
-|**clang-format**|`sudo apt install clang-format`|Code Formatter|
-|**FDM**|Official Website (`.deb`)|Free Download Manager|
-|**fzf**|`git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install`|Command-line fuzzy finder|
-|**Gnome SW Plugin**|`sudo apt install gnome-software-plugin-snap`|Snap plugin for GNOME Software|
-|**gromit-mpx| `sudo apt install gromit-mpx`|draw on screen|
+| Application              | Install Command / Source                                                           | Notes                                 |
+| ------------------------ | ---------------------------------------------------------------------------------- | ------------------------------------- |
+| **WhatsApp**             | `flatpak install flathub io.github.mimbrero.WhatsAppDesktop`                       | Unofficial Flatpak version            |
+| **Telegram**             | `flatpak install flathub org.telegram.desktop`                                     | Official Version                      |
+| **Discord**              | Official Website (`.deb`)                                                          |                                       |
+| **STM32CubeIDE**         | Official Website                                                                   | IDE for STM32 development             |
+| **STM32CubeMX**          | Official Website                                                                   | Code generation tool                  |
+| **VS Code**              | `sudo apt install code`                                                            | Code Editor                           |
+| **Windscribe**           | Official Website (`.deb`)                                                          | VPN Service (Corrected from Windsurf) |
+| **Vysor**                | Official Website                                                                   | Mirror phone screen to computer       |
+| **SMPlayer**             | `sudo apt install smplayer`                                                        | Media Player                          |
+| **Neovim**               | `sudo apt install neovim`                                                          | Advanced Text Editor                  |
+| **Bottles**              | `flatpak install flathub com.usebottles.bottles`                                   | Run Windows software                  |
+| **AnyDesk**              | Official Website (`.deb`)                                                          | Remote Desktop Access                 |
+| **OnlyOffice**           | `sudo apt install onlyoffice-desktopeditors`                                       | Office Suite                          |
+| **GIMP**                 | `flatpak install flathub org.gimp.GIMP`                                            | Image Editor                          |
+| **OBS Studio**           | `sudo apt install obs-studio`                                                      | Recording & Streaming                 |
+| **Foxit Reader**         | Official Website (`.deb`)                                                          | PDF Reader                            |
+| **Serial Port Terminal** | `sudo apt install cutecom`                                                         | GUI for serial devices                |
+| **PuTTY**                | `sudo apt install putty`                                                           | SSH and Telnet client                 |
+| **Tilix**                | `sudo apt install tilix`                                                           | Tiling Terminal Emulator              |
+| **zsh**                  | `sudo apt install zsh`                                                             | Alternative Shell                     |
+| **clangd**               | `sudo apt install clangd`                                                          | Language server for C/C++             |
+| **Git**                  | `sudo apt install git`                                                             | Version Control System                |
+| **Firefox**              | `sudo apt install firefox`                                                         | Web Browser                           |
+| **gcc**                  | `sudo apt install gcc`                                                             | C Compiler                            |
+| **clang-format**         | `sudo apt install clang-format`                                                    | Code Formatter                        |
+| **FDM**                  | Official Website (`.deb`)                                                          | Free Download Manager                 |
+| **fzf**                  | `git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install` | Command-line fuzzy finder             |
+| **Gnome SW Plugin**      | `sudo apt install gnome-software-plugin-snap`                                      | Snap plugin for GNOME Software        |
+| **gromit-mpx**           | `sudo apt install gromit-mpx`                                                      | draw on screen                        |
 
 ---
 ## GNOME Extensions
@@ -99,48 +99,6 @@ A list of extensions I use to enhance the GNOME desktop experience.
 |Area|Setting|Value|
 |---|---|---|
 |**Keyboard**|Layout|English (US, euro on 5)|
-
----
-## How to Auto-Mount Partitions on Linux Startup
-
-Here's how to automatically mount your partitions every time you start your system by editing the `fstab` file.
-
-### Step 1: Find the Partition's UUID and Type
-
-First, get the unique identifier (**UUID**) and filesystem type for the partition.
-
-```bash
-sudo blkid
-```
-
-This will list all partitions, their **UUIDs**, and their **TYPE** (e.g., `ntfs`, `ext4`).
-
-### Step 2: Edit the `/etc/fstab` File
-
-Open the filesystem table file (`fstab`) with root privileges.
-
-```bash
-sudo nvim /etc/fstab
-```
-
-### Step 3: Add the Mount Entry
-
-Add a new line at the end of the file using this format (separate fields with a space or tab): `UUID=<your_partition_uuid> <your_mount_point> <filesystem_type> <options> <dump> <pass>`
-
-**Example for NTFS Partitions:** These examples mount NTFS partitions and grant user ownership to prevent permission issues.
-
-```bash
-# Mount Local_Disk
-UUID=7C9EBC0D9EBBBE48 /media/abdallah-shehawey/Local_Disk ntfs-3g defaults,nofail,x-gvfs-show,uid=1000,gid=1000,umask=0022 0 0
-
-# Mount WinOS
-UUID=01DC06CA66C0E3F0 /media/abdallah-shehawey/WinOS ntfs-3g defaults,nofail,x-gvfs-show,uid=1000,gid=1000,umask=0022 0 0
-
-# Mount Local_Disk2
-UUID=01DC06CA66E4E6B0 /media/abdallah-shehawey/Local_Disk2 ntfs-3g defaults,nofail,x-gvfs-show,uid=1000,gid=1000,umask=0022 0 0
-```
-
-After saving, the partitions will mount automatically on the next reboot.
 
 ---
 ## Removing Menu Entries (Memory Test & UEFI Settings)

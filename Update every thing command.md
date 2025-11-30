@@ -110,36 +110,61 @@ update-every-thing --with-nvidia
 # Script: update-everything-fedora
 # Function: Update everything in Fedora
 # Default: skip NVIDIA drivers
-# Option: --with-nvidia
+# Option: --with-nvidia (update NVIDIA as well)
 
 echo "🚀 Starting full Fedora update..."
 
 WITH_NVIDIA=false
 EXCLUDE_NVIDIA=""
 
+# Detect option
 if [[ "$1" == "--with-nvidia" ]]; then
   WITH_NVIDIA=true
-  echo "⚠️ NVIDIA drivers WILL be updated."
+  echo "⚠️  NVIDIA drivers WILL be updated."
 else
   echo "⛔ NVIDIA drivers will be skipped."
   EXCLUDE_NVIDIA="--exclude=\*nvidia\* --exclude=\*cuda\*"
 fi
 
+# Enable fastest mirrors & metadata refresh
+echo "🔧 Optimizing DNF..."
 sudo dnf -y install dnf-plugins-core >/dev/null 2>&1
 sudo dnf makecache --refresh
 
+# System update
+echo "🔄 Updating Fedora packages..."
 sudo dnf upgrade -y --refresh $EXCLUDE_NVIDIA
 
+# Firmware update ( very important on Fedora )
+echo "🔄 Updating firmware (fwupd)..."
 sudo fwupdmgr refresh --force
 sudo fwupdmgr update -y || true
 
-flatpak update -y || true
-gnome-extensions update || true
+# Flatpak update
+if command -v flatpak &> /dev/null; then
+  echo "🔄 Updating Flatpak packages..."
+  flatpak update -y
+fi
 
+# GNOME extensions
+if command -v gnome-extensions &> /dev/null; then
+  echo "🔄 Updating GNOME extensions..."
+  gnome-extensions update || true
+fi
+
+# RPMFusion NVIDIA drivers (optional refresh)
+if [[ "$WITH_NVIDIA" == true ]]; then
+  echo "🔄 Verifying NVIDIA driver state..."
+  sudo dnf list installed \*nvidia\* || true
+fi
+
+# Cleanup
+echo "🧹 Cleaning system..."
 sudo dnf autoremove -y
 sudo dnf clean all
 
 echo "✅ Fedora update finished!"
+
 ```
 
 ---
