@@ -146,10 +146,20 @@ if command -v flatpak &> /dev/null; then
   flatpak update -y
 fi
 
-# GNOME extensions
+# GNOME Extensions Update (RPM + Installed Check)
 if command -v gnome-extensions &> /dev/null; then
-  echo "🔄 Updating GNOME extensions..."
-  gnome-extensions update || true
+  echo "🔄 Checking GNOME extensions..."
+
+  # Update extensions installed via Fedora packages
+  if command -v dnf &> /dev/null; then
+    echo "🔄 Updating GNOME RPM extensions..."
+    sudo dnf upgrade -y "gnome-shell-extension-*" || true
+  fi
+
+  # List user-installed extensions (from extensions.gnome.org)
+  echo "ℹ️ Note: User-installed GNOME extensions are updated via GNOME Software or Browser."
+  echo "📋 Installed extensions:"
+  gnome-extensions list || true
 fi
 
 # RPMFusion NVIDIA drivers (optional refresh)
