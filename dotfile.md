@@ -85,15 +85,21 @@ A list of extensions I use to enhance the GNOME desktop experience.
 
 ### Default Applications
 
-|File Type|Program|
-|---|---|
-|**PDF**|Foxit Reader|
-|**Video**|SMPlayer|
-|**Terminal**|Tilix|
-|**Shell**|Zsh|
-|**Editor**|nvim|
-|**Browser**|Firefox|
+| File Type    | Program      |
+| ------------ | ------------ |
+| **PDF**      | Foxit Reader |
+| **Video**    | SMPlayer     |
+| **Terminal** | Tilix        |
+| **Shell**    | Zsh          |
+| **Editor**   | nvim         |
+| **Browser**  | Firefox      |
 
+in **fedora** to make **open in tilix** in nautilus :
+
+```bash
+sudo dnf remove ptyxis # to remove open on console
+sudo dnf install tilix-nautilus # to add open in tilix here in nautilus
+```
 ## System Tweaks
 
 |Area|Setting|Value|
