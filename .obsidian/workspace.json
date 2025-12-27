@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dotfile.md",
+                "file": "zsh/README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "dotfile"
+              "title": "README"
             }
           }
         ]
@@ -172,13 +172,15 @@
   },
   "active": "a795d2200ef95924",
   "lastOpenFiles": [
-    "icon theme/README.md",
+    "nvim/README.md",
+    "autostart/auto_start.md",
     "dotfile.md",
+    "icon theme/README.md",
     "Gnome Custom Mime Icon Guide.md",
     "App-Customize Guide.md",
     "scrcpy over wifi.md",
     "ImpCMD.md",
-    "zsh/zsh Setup.md",
+    "zsh/README.md",
     "README.md",
     "Zram-swap.md",
     "Update every thing command.md",
@@ -196,8 +198,6 @@
     "Linux Adminstrtion/Compression in Linux.md",
     "Linux Adminstrtion/apt vs apt-get in debian.md",
     "Linux Adminstrtion/16. Process Managment.md",
-    "Linux Adminstrtion/15. Linux File System Essential.md",
-    "Linux Adminstrtion/14. Bash Scripting.md",
     "Linux Adminstrtion/01. introduction to linux and-linux history.pdf",
     "Raspberry pi interfacing"
   ]
