@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "icon theme/How-to-enable.md",
+                "file": "dotfile.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "How-to-enable"
+              "title": "dotfile"
             }
           }
         ]
@@ -172,8 +172,8 @@
   },
   "active": "a795d2200ef95924",
   "lastOpenFiles": [
+    "icon theme/README.md",
     "dotfile.md",
-    "icon theme/How-to-enable.md",
     "Gnome Custom Mime Icon Guide.md",
     "App-Customize Guide.md",
     "scrcpy over wifi.md",

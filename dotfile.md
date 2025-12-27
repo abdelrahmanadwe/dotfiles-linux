@@ -43,24 +43,33 @@ A list of the essential software I use, along with their installation commands o
 
 A list of extensions I use to enhance the GNOME desktop experience.
 
-| Extension                   | Purpose                                                    |
-| --------------------------- | ---------------------------------------------------------- |
-| **Blur My Shell**           | Applies a blur effect to the shell overview and top panel. |
-| **Burn My Windows**         | Adds destructive window-closing effects.                   |
-| **Clipboard Indicator**     | A simple and powerful clipboard manager.                   |
-| **Compiz Windows Effect**   | Adds wobbly window effects like Compiz.                    |
-| **Dash to Dock**            | Transforms the dash into a configurable dock.              |
-| **Dash to Panel**           | Combines the dash and top panel into a single panel.       |
-| **Desktop Widget (Clock)**  | Adds a clock widget to the desktop.                        |
-| **GSConnect**               | Integrates your phone with the GNOME desktop.              |
-| **Just Perfection**         | A comprehensive tool to customize the GNOME Shell.         |
-| **Lock Screen Background**  | Sets a custom background for the lock screen.              |
-| **Vitals**                  | Displays system temperature, voltage, fan speed, etc.      |
-| **Apps Menu**               | Adds a traditional application menu.                       |
-| **Auto Move Windows**       | Automatically moves applications to specific workspaces.   |
-| **System Monitor**          | Displays system resource usage in the top panel.           |
-| **Ubuntu AppIndicator**     | Supports application indicators in the top panel.          |
-| **Ubuntu Tiling Assistant** | Enhances window tiling functionality.                      |
+| Extension                                    | Purpose                                                           |
+| -------------------------------------------- | ----------------------------------------------------------------- |
+| **Blur My Shell**                            | Applies a blur effect to the shell overview and top panel.        |
+| **Burn My Windows**                          | Adds destructive window-closing effects.                          |
+| **Clipboard Indicator**                      | A simple and powerful clipboard manager.                          |
+| **Compiz Windows Effect**                    | Adds wobbly window effects like Compiz.                           |
+| **Dash to Dock**                             | Transforms the dash into a configurable dock.                     |
+| **Dash to Panel**                            | Combines the dash and top panel into a single panel.              |
+| **Desktop Widget (Clock)**                   | Adds a clock widget to the desktop.                               |
+| **GSConnect**                                | Integrates your phone with the GNOME desktop.                     |
+| **Just Perfection**                          | A comprehensive tool to customize the GNOME Shell.                |
+| **Lock Screen Background**                   | Sets a custom background for the lock screen.                     |
+| **Vitals**                                   | Displays system temperature, voltage, fan speed, etc.             |
+| **Apps Menu**                                | Adds a traditional application menu.                              |
+| **Auto Move Windows**                        | Automatically moves applications to specific workspaces.          |
+| **System Monitor**                           | Displays system resource usage in the top panel.                  |
+| **Ubuntu AppIndicator**                      | Supports application indicators in the top panel.                 |
+| **Ubuntu Tiling Assistant**                  | Enhances window tiling functionality.                             |
+| Coverflow Alt-Tab                            | Replaces the standard Alt-Tab with a 3D coverflow style switcher. |
+| Desktop Cube                                 | Adds a 3D cube effect when switching between workspaces.          |
+| Gnome Fuzzy App Search                       | Enables fuzzy searching for apps in the activities overview.      |
+| Screenshot windows sizer                     | Resizes windows to standard sizes for perfect screenshots.        |
+| search light                                 | Adds a floating, Spotlight-like search bar to the desktop         |
+| Tilling Shell                                | Provides an advanced tiling window management system.             |
+| Status Area Horizontal Spacing               | Allows customizing the gap between icons in the top bar.          |
+| Tilling Assistant                            | Adds Windows-like snap assist and advanced tiling layouts.        |
+| Appindicator and KStatusNotification Support | Ensures legacy tray icons appear correctly in the top panel.      |
 
 ---
 ## Customization
