@@ -1,0 +1,27 @@
+[Icon Theme]
+Name=Personal Icon Pack
+Comment=Custom icons
+Inherits=WhiteSur-apps,Adwaita
+Directories=128x128/mimetypes,256x256/apps,48x48/apps,32x32/apps,scalable/apps
+
+[128x128/mimetypes]
+Size=128
+Type=Fixed
+Context=MimeTypes
+
+[48x48/apps]
+Size=48
+Type=Fixed
+Context=Apps
+
+[32x32/apps]
+Size=32
+Type=Fixed
+Context=Apps
+
+[scalable/apps]
+Size=48
+Type=Scalable
+MinSize=16
+MaxSize=512
+Context=Apps
