@@ -2,7 +2,7 @@
 Name=Personal Icon Pack
 Comment=Custom icons
 Inherits=WhiteSur-apps,Adwaita
-Directories=128x128/mimetypes,256x256/apps,48x48/apps,32x32/apps,scalable/apps
+Directories=128x128/mimetypes,256x256/apps,48x48/apps,32x32/apps,scalable/apps,mimes/16,mimes/22,mimes/scalable
 
 [128x128/mimetypes]
 Size=128
@@ -25,3 +25,21 @@ Type=Scalable
 MinSize=16
 MaxSize=512
 Context=Apps
+
+[mimes/16]
+Size=16
+Context=MimeTypes
+Type=Fixed
+
+[mimes/22]
+Size=22
+Context=MimeTypes
+Type=Fixed
+
+[mimes/scalable]
+Size=64
+Context=MimeTypes
+MinSize=16
+MaxSize=512
+Type=Scalable
+
