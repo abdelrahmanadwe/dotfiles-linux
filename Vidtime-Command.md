@@ -54,21 +54,48 @@ Paste the following script:
 
 ```bash
 #!/usr/bin/env bash
+set -o pipefail
 
-# If no arguments are passed, show usage
+RED="\e[38;5;196m"
+RESET="\e[0m"
+
+total=0
+
 if [ "$#" -eq 0 ]; then
-  echo "Usage: vidtime <file|pattern> [more files...]"
+  echo -e "${RED}Usage: vidtime <file|pattern> [more files...]${RESET}" >&2
   exit 1
 fi
 
 for file in "$@"; do
-  # Skip if file does not exist (important for globs)
-  [ -e "$file" ] || continue
+  if [ ! -e "$file" ]; then
+    echo -e "${RED}Error: '$file' does not exist${RESET}" >&2
+    continue
+  fi
 
-  echo -n "$file: "
-  ffprobe -v quiet -show_entries format=duration -of csv="p=0" "$file" | \
-  awk '{printf "%02d:%02d:%02d\n",$1/3600,($1%3600)/60,$1%60}'
+  if [ ! -f "$file" ]; then
+    echo -e "${RED}Error: '$file' is not a regular file${RESET}" >&2
+    continue
+  fi
+
+  duration=$(ffprobe -v quiet -show_entries format=duration -of csv="p=0" "$file")
+  if [ $? -ne 0 ] || [ -z "$duration" ]; then
+    echo -e "${RED}Error: '$file' is not a valid media file${RESET}" >&2
+    continue
+  fi
+
+  printf "%s: " "$file"
+  echo "$duration" | awk '{printf "%02d:%02d:%02d\n",$1/3600,($1%3600)/60,$1%60}'
+
+  secs=$(printf "%.0f" "$duration")
+  total=$((total + secs))
 done
+
+if [ $total -ne 0 ]; then
+  printf "\nTotal: %02d:%02d:%02d\n" $((total/3600)) $(((total%3600)/60)) $((total%60))
+  exit 0
+else
+  exit 1
+fi
 ```
 
 Make it executable:
