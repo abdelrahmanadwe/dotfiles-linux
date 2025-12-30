@@ -151,4 +151,15 @@ done
 GTK_THEME=Adwaita:dark program
 ```
 
+---
+### conservation mode
 
+- how to enabable
+```bash
+echo 1 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/*/conservation_mode
+```
+
+- how to disable
+```bash
+echo 0 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/*/conservation_mode
+```
