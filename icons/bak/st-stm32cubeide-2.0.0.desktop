@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=STMicroelectronics STM32CubeIDE 2.0.0
+Comment=STMicroelectronics STM32CubeIDE 2.0.0
+GenericName=STM32CubeIDE
+Exec=/opt/st/stm32cubeide_2.0.0/stm32cubeide_wayland %F
+Icon=STM32IDE
+Path=/opt/st/stm32cubeide_2.0.0/
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Development
