@@ -9,6 +9,11 @@ Size=128
 Type=Fixed
 Context=MimeTypes
 
+[256x256/apps]
+Size=256
+Type=Fixed
+Context=Apps
+
 [48x48/apps]
 Size=48
 Type=Fixed
