@@ -163,3 +163,9 @@ echo 1 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/*/conservation_mode
 ```bash
 echo 0 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/*/conservation_mode
 ```
+---
+### Delete Coredump
+
+```bash
+sudo rm -f /var/lib/systemd/coredump/*
+```
