@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "bf476663b7bd871b",
+        "id": "2d25708d8d8a23bb",
         "type": "tabs",
         "children": [
           {
-            "id": "803d495160d806b5",
+            "id": "6e9f58f6a8de8637",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ImpCMD.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ImpCMD"
+              "title": "README"
             }
           }
         ]
@@ -170,8 +170,15 @@
       "bases:Create new base": false
     }
   },
-  "active": "803d495160d806b5",
+  "active": "6e9f58f6a8de8637",
   "lastOpenFiles": [
+    "misc/obsidian",
+    "configs/autostart/auto_start.md",
+    "README.md",
+    "test.md",
+    "ImpCMD.md",
+    "Grub_Config.md",
+    "Zram-swap.md",
     "Vidtime-Command.md",
     "zsh/README.md",
     "nvim/README.md",
@@ -181,9 +188,6 @@
     "Gnome Custom Mime Icon Guide.md",
     "App-Customize Guide.md",
     "scrcpy over wifi.md",
-    "ImpCMD.md",
-    "README.md",
-    "Zram-swap.md",
     "Update every thing command.md",
     "Raspberry pi interfacing/4. Motion Detection with PIR sensor.md",
     "Raspberry pi interfacing/5. Sending Email from a Raspberry Pi Using Python.md",
@@ -194,10 +198,6 @@
     "Linux Adminstrtion/Vim Cheat Sheet.md",
     "Linux Adminstrtion/upgrade vs full upgrade in debian.md",
     "Linux Adminstrtion/TTY vs PTS.md",
-    "Linux Adminstrtion/MQTT on linux.md",
-    "Linux Adminstrtion/Linux Package Managers.md",
-    "Linux Adminstrtion/Compression in Linux.md",
-    "Linux Adminstrtion/apt vs apt-get in debian.md",
     "Linux Adminstrtion/01. introduction to linux and-linux history.pdf",
     "Raspberry pi interfacing"
   ]
