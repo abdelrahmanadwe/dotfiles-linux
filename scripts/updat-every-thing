@@ -1,0 +1,27 @@
+#!/bin/bash
+# Script: update-everything-fedora
+# Function: Update everything in Fedora
+
+echo "🚀 Starting full Fedora update..."
+
+echo "🔄 Updating Fedora packages..."
+sudo dnf upgrade -y --refresh
+
+echo "🔄 Updating firmware (fwupd)..."
+sudo fwupdmgr refresh --force
+sudo fwupdmgr update -y || true
+
+if command -v flatpak &> /dev/null; then
+  echo "🔄 Updating Flatpak packages..."
+  flatpak update -y
+fi
+
+if command -v gnome-extensions &> /dev/null; then
+  echo "🔄 Updating GNOME RPM extensions..."
+  sudo dnf upgrade -y "gnome-shell-extension-*" || true
+
+  echo "📋 Installed GNOME extensions:"
+  gnome-extensions list || true
+fi
+
+echo "✅ Fedora update finished!"
