@@ -1,0 +1,199 @@
+.TH PADNUM 1 "January 2026" "padnum 1.0.0" "User Commands"
+
+.SH NAME
+padnum \- normalize numeric filename prefixes with zero-padding and undo support
+
+.SH SYNOPSIS
+.B padnum
+.RI [ OPTIONS ]
+
+.SH DESCRIPTION
+.B padnum
+is a command-line utility that detects numeric prefixes at the beginning
+of filenames and applies zero-padding while preserving the remainder of
+the filename exactly as-is (including Arabic text, spaces, underscores,
+dots, and other symbols).
+
+The tool is designed for ordered collections such as lecture series,
+video courses, and media libraries where proper lexicographical sorting
+is required (e.g., preventing "10" from appearing before "2").
+
+Key features:
+.IP \[bu] 2
+Automatic numeric prefix detection.
+.IP \[bu]
+Automatic or user-defined padding width.
+.IP \[bu]
+Custom separator support.
+.IP \[bu]
+Extension filtering.
+.IP \[bu]
+Dry-run mode.
+.IP \[bu]
+Multi-level undo support (up to 10 steps).
+.IP \[bu]
+Formatted, colorized undo history display.
+.IP \[bu]
+Safe operation (ignores files not starting with numbers).
+
+Use
+.BR -h " or " --help
+to display a concise usage summary.
+
+.SH OPTIONS
+.TP
+.BR -p ", " --padding " " N
+Explicitly set the numeric padding width.
+Example: \fB-p 3\fR produces numbers such as 001, 002, 010.
+If not specified, padding is automatically detected.
+
+.TP
+.BR --sep " " STRING
+Set a custom separator between the padded number and the filename.
+Default separator is a single space.
+Example: \fB--sep "-"\fR produces "01-filename.ext".
+
+.TP
+.BR --ext " " EXT
+Process only files with the specified extension.
+The extension should be provided without a leading dot.
+Matching is case-insensitive.
+
+.TP
+.BR -n ", " --dry-run
+Preview rename operations without applying changes.
+This option is respected by normal execution and undo.
+
+.TP
+.BR --undo " [" N ]
+Undo previous rename operations.
+If no number is provided, one undo step is applied.
+If a number \fIN\fR is given, undo is applied sequentially up to that level.
+
+Undo behavior:
+.IP \[bu] 2
+Undo steps are applied sequentially.
+.IP \[bu]
+Undo history is consumed when applied.
+.IP \[bu]
+If no undo steps are available, an error is reported.
+.IP \[bu]
+Undo respects dry-run mode.
+
+.TP
+.B --history
+Display the undo history in a formatted view using
+.BR less .
+History is shown in chronological order (oldest to newest).
+When displayed in a terminal, colors are enabled automatically.
+
+.TP
+.B --version
+Display program version and exit.
+
+.TP
+.BR -h ", " --help
+Display a concise help message and exit.
+
+.SH AUTOMATIC PADDING
+If the
+.B -p
+option is not specified,
+.B padnum
+automatically determines the required padding width based on the largest
+numeric prefix found among the matching files.
+
+Examples:
+.IP \[bu] 2
+Files numbered up to 9 result in padding width 1.
+.IP \[bu]
+Files numbered up to 23 result in padding width 2.
+.IP \[bu]
+Files numbered up to 105 result in padding width 3.
+
+.SH UNDO MECHANISM
+.B padnum
+maintains an undo history file in the current working directory:
+
+.IP
+.B .padnum.undo
+
+Characteristics:
+.IP \[bu] 2
+Up to 10 undo steps are stored.
+.IP \[bu]
+Undo steps are stored chronologically.
+.IP \[bu]
+The newest undo step corresponds to UNDO #1.
+.IP \[bu]
+Undo history is automatically updated after each operation.
+.IP \[bu]
+Redo functionality is intentionally not supported.
+
+.SH EXAMPLES
+.TP
+padnum
+Automatically detect padding and rename files.
+
+.TP
+padnum -p 3
+Force padding width to 3 digits.
+
+.TP
+padnum --sep "-"
+Use hyphen as separator.
+
+.TP
+padnum --ext mp4
+Process only MP4 files.
+
+.TP
+padnum -n
+Preview changes without applying them.
+
+.TP
+padnum --undo
+Undo the most recent operation.
+
+.TP
+padnum --undo 2
+Undo the last two operations.
+
+.TP
+padnum --history
+Display formatted undo history.
+
+.TP
+padnum --help
+Show usage summary.
+
+.TP
+padnum --version
+Display program version.
+
+.SH EXIT STATUS
+.TP
+.B 0
+Successful execution.
+.TP
+.B 1
+Invalid usage, missing undo history, or no undo steps available.
+
+.SH FILES
+.TP
+.B .padnum.undo
+Undo history file stored in the current directory.
+
+.SH LIMITATIONS
+.IP \[bu] 2
+Only files starting with numeric prefixes are processed.
+.IP \[bu]
+Redo functionality is not supported.
+.IP \[bu]
+Existing files are never overwritten.
+
+.SH AUTHOR
+Written by Abdelrahman Adwe.
+
+.SH LICENSE
+Provided as-is for personal and educational use.
