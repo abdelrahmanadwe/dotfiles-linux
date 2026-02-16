@@ -171,4 +171,3 @@ If you have a better structure or workflow idea, please open an issue!
 **If this configuration helped you, please consider giving the repo a ⭐!** It motivates me to keep improving it. 😄
 
 </div>
-int mahmoud = 10
