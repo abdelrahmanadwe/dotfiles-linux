@@ -69,13 +69,12 @@ git push origin new-branch
 This is the standard way to merge your changes into the `main` branch.
 
 1. Go to the repository page on GitHub.
-    
+
 2. You will see a notification with your new branch name and a button that says **"Compare & pull request"**.
-    
+
 3. Click it, review your changes, add a title and description, and submit the Pull Request.
-    
+
 4. Once approved (by you or a teammate), you can "Merge" it.
-    
 
 > **Alternative (Not Recommended for Teams):** If you have direct write access and are sure, you _could_ push directly to `main`, but using branches and Pull Requests is much safer and better practice.
 

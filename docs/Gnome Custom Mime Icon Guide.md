@@ -9,17 +9,16 @@ The Markdown (`.md`) icon customization is included as a **working example**.
 ## 🎯 Goal
 
 - Customize the icon of **any file type** (by MIME)
-    
+
 - Change **one file type only**, without affecting the system
-    
+
 - Avoid breaking:
-    
-    - Application icons
-        
-    - Wine icons
-        
-    - Web App icons (Brave, Chrome, etc.)
-        
+
+  - Application icons
+
+  - Wine icons
+
+  - Web App icons (Brave, Chrome, etc.)
 
 This method follows GNOME’s **recommended icon theme inheritance model**.
 
@@ -30,11 +29,10 @@ This method follows GNOME’s **recommended icon theme inheritance model**.
 Instead of modifying `hicolor` or system themes, we:
 
 1. Create a **small custom icon theme**
-    
+
 2. Inherit from the current system theme (usually `Adwaita`)
-    
+
 3. Override **only one MIME icon**
-    
 
 GNOME automatically falls back to the parent theme for everything else.
 
@@ -52,13 +50,12 @@ GNOME automatically falls back to the parent theme for everything else.
 Where:
 
 - `<theme-name>` = your custom theme
-    
+
 - `<size>` = 128x128, 64x64, etc.
-    
+
 - `<context>` = `mimetypes`
-    
+
 - `<mime-icon-name>` = icon name for the MIME type
-    
 
 ---
 
@@ -82,11 +79,10 @@ Context=MimeTypes
 ## 🧠 How GNOME Resolves Icons
 
 1. GNOME looks in the **active icon theme**
-    
+
 2. If the icon exists → it is used
-    
+
 3. If not → GNOME falls back to the `Inherits` theme
-    
 
 This guarantees **system stability**.
 
@@ -167,11 +163,10 @@ nautilus &
 ## ✅ Result
 
 - `.md` files use the custom icon
-    
+
 - Other file types remain unchanged
-    
+
 - Application icons remain intact
-    
 
 ---
 
@@ -197,21 +192,19 @@ gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
 ## 🛑 What NOT to Do
 
 - ❌ Do NOT modify `hicolor`
-    
+
 - ❌ Do NOT rename PNG files as `.svg`
-    
+
 - ❌ Do NOT change system icon themes
-    
 
 ---
 
 ## ✅ Summary
 
 - Custom MIME icons should be done via **user icon themes**
-    
+
 - Inheritance ensures safety and stability
-    
+
 - Markdown override is a practical reference example
-    
 
 This approach is **clean, reversible, and GNOME-compliant**.

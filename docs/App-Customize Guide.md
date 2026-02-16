@@ -7,9 +7,8 @@ This guide explains how to modify the launch behavior of Linux applications by c
 When you want to change how a program opens (e.g., GParted, Chrome, or VS Code), it is **not recommended** to edit the original file located in `/usr/share/applications` because:
 
 1. **System updates** will overwrite your changes.
-    
+
 2. The modification affects **all users** on the system.
-    
 
 **The Solution:** Copy the file to your local directory `~/.local/share/applications`. The system prioritizes your local file over the system-wide one.
 
@@ -39,7 +38,7 @@ Open the copied file using any text editor (like `nvim`, `nano`, or `gedit`).
 nvim ~/.local/share/applications/gparted.desktop
 ```
 
-#### 💡 How to Edit (The Important Part):
+#### 💡 How to Edit (The Important Part)
 
 Look for the line starting with **`Exec=`**. This line contains the command the system executes to open the program.
 

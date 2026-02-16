@@ -8,17 +8,16 @@ It is designed to work naturally with **shell arguments**, **wildcards**, and **
 ## ✨ Features
 
 - 📦 **Simple & lightweight** — just Bash + FFmpeg
-    
+
 - 🕒 Outputs duration in **HH:MM:SS** format
-    
+
 - 🧠 **Shell-native** — supports glob patterns (`*.mp4`)
-    
+
 - 🧩 Handles filenames with **spaces & special characters**
-    
+
 - 🔁 Accepts **multiple files** at once
-    
+
 - 🚫 Gracefully skips non-existing files
-    
 
 ---
 
@@ -149,13 +148,12 @@ vidtime *
 ## 🧠 How It Works
 
 - `$@` preserves **all arguments exactly as passed**
-    
+
 - The shell expands wildcards **before** execution
-    
+
 - `ffprobe` extracts the duration in seconds
-    
+
 - `awk` converts seconds into `HH:MM:SS`
-    
 
 This follows the **Unix philosophy**:
 
@@ -175,24 +173,22 @@ Session 07 Linux File System Essentials.mkv: 01:35:04
 ## 🔒 Safety Notes
 
 - Filenames with spaces are fully supported
-    
+
 - Non-existing files are silently skipped
-    
+
 - No temporary files are created
-    
 
 ---
 
 ## 🌱 Possible Extensions
 
 - ⏱ Total duration of all files
-    
+
 - 📁 Recursive directory support
-    
+
 - 📊 CSV / JSON output
-    
+
 - 🔃 Sort by duration
-    
 
 ---
 

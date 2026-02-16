@@ -5,13 +5,12 @@
 This guide covers:
 
 - Installing scrcpy on major Linux distributions
-    
+
 - Required dependencies
-    
+
 - Enabling Developer Options on the phone
-    
+
 - Using scrcpy over **USB** and **Wi‑Fi (Wireless Debugging)**
-    
 
 ---
 
@@ -50,11 +49,10 @@ sudo apt install ffmpeg libsdl2-2.0-0 adb wget \
 ### 1️⃣ Enable Developer Options
 
 1. Open **Settings** → **About phone**
-    
+
 2. Tap **Build number** 7 times
-    
+
 3. You will see: _"You are now a developer"_
-    
 
 ---
 
@@ -69,20 +67,18 @@ Settings → Developer options
 Enable:
 
 - ✅ **USB debugging**
-    
+
 - ✅ **Wireless debugging** (Android 11+ recommended)
-    
 
 ---
 
 ## 🔌 Method 1: USB Connection (Most Stable)
 
 1. Connect the phone to the PC via USB
-    
+
 2. Accept the debugging prompt on the phone
-    
+
 3. Run:
-    
 
 ```bash
 scrcpy
@@ -103,36 +99,34 @@ adb tcpip 5555
 ```
 
 1. Find your phone IP address:
-    
+
     - Settings → Wi‑Fi → Network details
-        
+
 2. Connect:
-    
 
 ```bash
 adb connect <IP_ADDRESS>:5555
 ```
 
-3. Verify connection:
-    
+1. Verify connection:
 
 ```bash
 adb devices
 ```
 
-4. Start scrcpy over Wi‑Fi:
-    
+1. Start scrcpy over Wi‑Fi:
 
 ```bash
 scrcpy -e
 ```
+
 ---
 
 ### Option B — **Wireless Debugging (Recommended – Android 11+)**
 
 This is the **official and stable method**.
 
-#### On the phone:
+#### On the phone
 
 ```
 Settings → Developer options → Wireless debugging → ON
@@ -142,13 +136,12 @@ Pair device with pairing code
 The phone will display:
 
 - IP address
-    
-- Pairing port
-    
-- Pairing code
-    
 
-#### On the PC:
+- Pairing port
+
+- Pairing code
+
+#### On the PC
 
 ```bash
 adb pair <IP_ADDRESS>:<PAIR_PORT>
@@ -199,36 +192,34 @@ Expected output:
 ## 🚀 Useful scrcpy Options
 
 - Front camera:
-    
+
     ```bash
     scrcpy --camera-facing=front
     ```
-    
+
 - Limit bitrate (better Wi‑Fi stability):
-    
+
     ```bash
     scrcpy -e --bit-rate=4M
     ```
-    
+
 - Limit FPS:
-    
+
     ```bash
     scrcpy --max-fps=30
     ```
-    
 
 ---
 
 ## 🧠 Notes & Tips
 
 - USB is always the **most stable** option
-    
+
 - Wi‑Fi depends on router quality and signal strength
-    
+
 - Wireless Debugging is preferred over `adb tcpip 5555`
-    
+
 - No root access is required
-    
 
 ---
 

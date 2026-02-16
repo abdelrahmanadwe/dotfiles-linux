@@ -27,11 +27,13 @@ sudo chmod +x /usr/local/bin/update-every-thing
 ## 🧠 Usage
 
 - **Normal update (skip NVIDIA):**
+
 ```bash
 update-every-thing
 ```
 
 - **Update including NVIDIA drivers:**
+
 ```bash
 update-every-thing --with-nvidia
 ```
@@ -94,11 +96,13 @@ sudo chmod +x /usr/local/bin/update-every-thing
 ## 🧠 Usage
 
 - **Normal update (skip NVIDIA):**
+
 ```bash
 update-every-thing
 ```
 
 - **Update including NVIDIA drivers:**
+
 ```bash
 update-every-thing --with-nvidia
 ```

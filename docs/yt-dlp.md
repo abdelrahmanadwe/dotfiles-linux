@@ -3,11 +3,10 @@
 This guide explains how to install **yt-dlp** (a powerful YouTube & media downloader) on:
 
 - 🐧 Ubuntu / Debian
-    
+
 - 🐧 Fedora
-    
+
 - 🪟 Windows
-    
 
 ## 🔧 What is yt-dlp?
 
@@ -75,23 +74,23 @@ yt-dlp --version
 ### ✅ Method 1: Standalone EXE (Easiest Way)
 
 1. **Download** the latest `yt-dlp.exe` from the official release page:
-    
+
     👉 [GitHub Releases](https://github.com/yt-dlp/yt-dlp/releases/latest "null")
-    
+
 2. **Move** `yt-dlp.exe` to a permanent folder, for example:
-    
+
     `C:\yt-dlp\`
-    
+
 3. **Add to PATH**:
-    
+
     - Search for **"Edit the system environment variables"** in Windows Search.
-        
+
     - Click **Environment Variables** -> Select **Path** -> **Edit** -> **New**.
-        
+
     - Paste the path to your folder (e.g., `C:\yt-dlp\`).
-        
+
 4. **Test**: Open CMD or PowerShell and run:
-    
+
 ```bash
 yt-dlp --version
 ```
@@ -137,10 +136,12 @@ yt-dlp -U
 ## 📌 Notes
 
 > - **Stay Updated:** Always use the latest version for better site support.
->     
+>
 > - **Throttling:** Some sites may block excessive downloads; use responsibly.
->     
+>
 > - **Legal:** Respect copyrights and platform policies.
->     
+>
 
 🔗 **Official Repository:** 👉 [https://github.com/yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp "null")
+
+test

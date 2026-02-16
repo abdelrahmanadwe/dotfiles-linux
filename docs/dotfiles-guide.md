@@ -39,6 +39,7 @@ A list of the essential software I use, along with their installation commands o
 | **gromit-mpx**           | `sudo apt install gromit-mpx`                                                      | draw on screen                        |
 
 ---
+
 ## GNOME Extensions
 
 A list of extensions I use to enhance the GNOME desktop experience.
@@ -72,6 +73,7 @@ A list of extensions I use to enhance the GNOME desktop experience.
 | Appindicator and KStatusNotification Support | Ensures legacy tray icons appear correctly in the top panel.      |
 
 ---
+
 ## Customization
 
 ### Appearance
@@ -109,6 +111,7 @@ in **fedora** to make **open in tilix** in nautilus :
 sudo dnf remove ptyxis # to remove open on console
 sudo dnf install tilix-nautilus # to add open in tilix here in nautilus
 ```
+
 ## System Tweaks
 
 |Area|Setting|Value|
@@ -116,6 +119,7 @@ sudo dnf install tilix-nautilus # to add open in tilix here in nautilus
 |**Keyboard**|Layout|English (US, euro on 5)|
 
 ---
+
 ## Removing Menu Entries (Memory Test & UEFI Settings)
 
 To simplify the GRUB menu, remove execute permissions from the corresponding scripts.
@@ -135,35 +139,35 @@ sudo update-grub
 ```
 
 ---
+
 ## Speeding Up Boot Time
 
 Disable the service that waits for the network to be configured on startup.
 
 1. **Disable and mask the service:**
-    
+
     ```bash
     sudo systemctl disable NetworkManager-wait-online.service
     sudo systemctl mask NetworkManager-wait-online.service
     ```
-    
+
 2. **To re-enable it in the future:**
-    
+
     ```bash
     sudo systemctl unmask NetworkManager-wait-online.service
     sudo systemctl enable NetworkManager-wait-online.service
     ```
-    
 
 #### How to Analyze Boot Time
 
 1. **Get the total boot time:**
-    
+
     ```bash
     systemd-analyze
     ```
-    
+
 2. **List services by initialization time:**
-    
+
     ```bash
     systemd-analyze blame | head -n 20
     ```

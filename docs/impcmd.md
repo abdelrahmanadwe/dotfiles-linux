@@ -134,6 +134,7 @@ find . -type f -name "*.txt" -exec sed -i 's/oldword/newword/g' {} +
 ```
 
 ### print time of video
+
 ```bash
 for file in "Session 06 Bash Scripting Essentials.mkv" \
             "Session 07 Linux File System Essentials.mkv" \
@@ -147,23 +148,29 @@ done
 ```
 
 ### force specific program to run in dark mode
+
 ```bash
 GTK_THEME=Adwaita:dark program
 ```
 
 ---
+
 ### conservation mode
 
 - how to enabable
+
 ```bash
 echo 1 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/*/conservation_mode
 ```
 
 - how to disable
+
 ```bash
 echo 0 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/*/conservation_mode
 ```
+
 ---
+
 ### Delete Coredump
 
 ```bash
